@@ -26,8 +26,11 @@ RUN apt-get update \
     libjpeg-dev \
     libpng-dev \
     libfreetype6-dev \
+    nodejs\
+    npm\
     && apt-get clean \
     && apt-get autoremove
+RUN npm install npm@latest -g && npm install -g pm2
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php \
